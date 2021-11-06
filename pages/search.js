@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from '../components/Header'
-import { API_KEY, CONTEXT_KEY } from '../keys'
 import Response from '../Response'
 import { useRouter } from 'next/router'
 import SearchResults from '../components/SearchResults'
@@ -24,12 +23,12 @@ const Search = ({results}) => {
 
 export default Search
 
-export async function getServerSideProps(context){
+export async function getServerSideProps (context){
     const useDummyData = false;
     console.log(context.query.term)
     const startIndex = context.query.start || "0"
 
-    const data =useDummyData ? Response : await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`).then((response) => response.json());
+    const data =useDummyData ? Response : await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=${process.env.REACT_APP_CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`).then((response) => response.json());
    
     // const data = await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyCKxteW6Sv0g91lt5dEH2si793-kE4ELJA&cx=f8c013a4054326f9c&q=movies`).then((response) => response.json());
     // console.log(data)

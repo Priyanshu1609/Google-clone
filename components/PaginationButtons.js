@@ -5,7 +5,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 const PaginationButtons = () => {
     const router = useRouter();
     const startIndex = Number(router.query.start) || 0;
-    console.log(router.query)
 
 
     return (
