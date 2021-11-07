@@ -24,6 +24,7 @@ const Header = () => {
                     src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
                     height={40}
                     width={120}
+                    alt="img"
                     onClick={() => {
                         router.push('/')
                     }}

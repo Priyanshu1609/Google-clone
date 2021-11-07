@@ -8,9 +8,9 @@ const SearchResults = ({ results }) => {
             {results.items?.map((item) => (
                 <div key={item.link} className="max-w-xl mb-8">
                     <div className="group">
-                        <a target="_blank" href={item.link} className="text-sm">{item.formattedUrl}</a>
+                        <a target="_blank" rel="noreferrer" href={item.link} className="text-sm">{item.formattedUrl}</a>
 
-                        <a target="_blank" href={item.link}>
+                        <a target="_blank" rel="noreferrer" href={item.link}>
                             <h2 className="truncate text-lg font-medium text-blue-800 group-hover:underline">
                                 {item.title}
                             </h2>
@@ -21,7 +21,7 @@ const SearchResults = ({ results }) => {
                 </div>
             ))}
 
-            <PaginationButtons/>
+            <PaginationButtons />
 
         </div>
     )
